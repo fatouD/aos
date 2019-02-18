@@ -8,10 +8,10 @@ use App\Album ;
 use App\Http\Resources\AlbumResource;
 use Illuminate\Http\Request;
 
-class AlbumController extends Controller
+class AlbumControllerV extends Controller
 {
 
-    
+
     public function __construct()
     {
         //$this->middleware('auth:api')->except(['index', 'show']);
@@ -27,7 +27,7 @@ class AlbumController extends Controller
     public function index()
     {
         //
-        return AlbumResource::collection(Album::with('photos')->paginate(25));
+        // TU mets ton return view....
     }
 
     /**
@@ -45,7 +45,7 @@ class AlbumController extends Controller
         ]);
         $album ->save();
 
-        return $album;
+        // TU mets ton return view....
     }
 
     /**
@@ -56,13 +56,8 @@ class AlbumController extends Controller
      */
     public function show(Request $request)
     {
-
         $album = Album::find($request->get('id'));
-        if ($request->user()->id !== $album->user_id) {
-            return response()->json(['error' => 'You can only show your own albums.'], 403);
-        }
-
-        return new AlbumResource($album);
+        // TU mets ton return view....
 
     }
 
@@ -83,7 +78,7 @@ class AlbumController extends Controller
 
         $album->update($request->only(['name', 'description']));
 
-        return new AlbumResource($album);
+        // TU mets ton return view....
     }
 
     /**
@@ -94,10 +89,10 @@ class AlbumController extends Controller
      */
     public function destroy(Request $request)
     {
-        $album = Album::find($request->input('id'));
+        $album = Album::find($request->post('id'));
         $album->delete();
 
-        return response()->json(null, 204);
+        // TU mets ton return view....
     }
 
 

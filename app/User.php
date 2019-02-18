@@ -2,6 +2,11 @@
 
 namespace App;
 
+
+use Cartalyst\Sentinel\Users\EloquentUser;
+use Tymon\JWTAuth\Contracts\JWTSubject as AuthenticatableUserContract;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;

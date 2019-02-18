@@ -29,13 +29,14 @@ Route::post('/inscription', function () {
 	$utilisateur->save();
     return 'Votre email est ' . request('email');
 });
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::post('store', 'AlbumControllerV@store')->name('store');
+
+//ici jutilise le controller photoController1 par exemple pour retourner une vue
+Route::post('upload', 'PhotoControllerV@store')->name('upload');
+
 Auth::routes();
-Route::get('home', 'HomeController@index')->name('home');
- Route::post('store', 'AlbumController@store')->name('store');
-
-Route::post('upload', 'PhotoController@index');
-
-
  Route::post('register', 'AuthController@register');
  Route::post('home', 'AuthController@login');
 

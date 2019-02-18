@@ -19,14 +19,14 @@
            {{ csrf_field() }}
            <label>Nom</label> <input type="text" name="name">
            <label>Description</label> <input type="text" name="description">
-            <!-- <button type="submit">creer</button>-->
-             <input type="submit" value="Creer" />
+            
+            <input type="submit" value="Creer" />
 
         </form><br><br><br>
 
                    
 
-     <button>Voir un album</button>   <button>Supprimer un album</button>
+     <a href="album">Voir un album</a>   
                                     
 
 </div>

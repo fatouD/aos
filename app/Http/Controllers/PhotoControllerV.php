@@ -7,14 +7,14 @@ use App\Http\Resources\PhotoResource;
 use App\Photos as photomodel;
 use Illuminate\Http\Request;
 
-class PhotoController extends Controller
+class PhotoControllerV extends Controller
 {
     public function __construct()
     {
-       // $this->middleware('auth:api');
+        // $this->middleware('auth:api');
     }
 
-    
+
 
     public function store(Request $request, Album $album)
     {
@@ -44,7 +44,7 @@ class PhotoController extends Controller
             ]
         );
 
-        return new PhotoResource($photo);
+       // TU mets ton return view....
     }
     /**
      * Display the specified resource.
@@ -56,10 +56,10 @@ class PhotoController extends Controller
     {
         $photo = Photos::find($request->get('id')) ;
         if ($request->user()->id !== $photo->user_id) {
-            return response()->json(['error' => 'You can only show your own albums.'], 403);
+            return response()->json(['error' => 'You can only show your own photo.'], 403);
         }
-        return new PhotoResource($photo);
 
+        // TU mets ton return view....
     }
 
 }
