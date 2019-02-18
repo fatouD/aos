@@ -4,22 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Album;
 use App\Http\Resources\PhotoResource;
-use App\Photos;
+use App\Photos as photomodel;
 use Illuminate\Http\Request;
 
 class PhotoController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api');
+       // $this->middleware('auth:api');
     }
 
-     public function index()
-    {
-        //
-        return view('uplaod');
-    }
-
+    
 
     public function store(Request $request, Album $album)
     {

@@ -29,13 +29,16 @@ Route::post('/inscription', function () {
 	$utilisateur->save();
     return 'Votre email est ' . request('email');
 });
-Auth::routes();
+
 Route::get('/home', 'HomeController@index')->name('home');
  Route::post('store', 'AlbumController@store')->name('store');
 
-Route::post('upload', 'PhotoController@index');
+//la j'utilise le controller photoController pour stock (lapi controler )
+Route::post('/upload', 'PhotoController@store');
+//ici jutilise le controller photoController1 par exemple pour retourner une vue 
+Route::post('upload', 'PhotoController1@index')->name('upload');
 
-
+Auth::routes();
  Route::post('register', 'AuthController@register');
  Route::post('home', 'AuthController@login');
 

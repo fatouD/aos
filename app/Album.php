@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Album extends Model
 {
-   protected $fillable = ['id', 'name', 'description'];
+   protected $fillable = ['id', 'name', 'description','user_id'];
 
     public function user()
     {

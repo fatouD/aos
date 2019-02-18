@@ -11,6 +11,63 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
+<style>
+            html, body {
+                background-color: #677179;
+                color: #636b6f;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .full-height {
+                height: 100vh;
+            }
+
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .position-ref {
+                position: relative;
+            }
+
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+
+            }
+
+            .container {
+                text-align: center;
+
+            }
+
+            .title {
+                font-size: 84px;
+                color: white;
+            }
+
+            .links  {
+                color: white;
+                padding: 0 25px;
+                font-size: 75px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+            .form-control{color:black;}
+
+            .m-b-md {
+                margin-bottom: 30px;
+            }
+        </style>
+
   </head>
   <body>
 <div class="container">
@@ -23,7 +80,7 @@
 
 				<div class="panel-heading">
 
-					<h1>Upload new Image</h1>
+					<h1 class="links">Charger une nouvelle photo</h1>
 
 				</div>
 
@@ -39,7 +96,7 @@
 
 							<label for="image" >Image:</label>
 
-							<input type="file" name="photo" id="photo">
+							<input type="file" name="photo" id="photo"><br><br>
 
 						</div>
 
@@ -47,13 +104,14 @@
 
 							<label for="desc" >Description</label>
 
-							<textarea name="description" id="description" class="form-control" placeholder="Description..."></textarea>
+							<textarea name="description" id="description" 
+							 style="width: 300px;height:75px;" class="form-control" placeholder="Description..."  ></textarea><br><br>
 
 						</div>
 
 						<div class="form-group">
 
-							<button action="submit" class="btn btn-primary">Upload</button>
+							<button action="submit" class="btn btn-primary">Charger</button>
 
 						</div>
 

@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::middleware('auth:api')->post('home', 'AlbumController@store');
 Route::post('store', 'AlbumController@store')->name('home');
-Route::post('upload', 'PhotoController@index');
+Route::post('upload', 'PhotoController@store');
 
  Route::post('register', 'AuthController@register');
  Route::post('login', 'AuthController@login');

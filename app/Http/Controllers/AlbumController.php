@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AlbumRequest;
 use App\Repositories\AlbumRepository;
-
-use App\Model\Album as albummodel;
+use App\Http\Controllers\AlbumController;
+use App\Album ;
 use App\Http\Resources\AlbumResource;
 use Illuminate\Http\Request;
 
@@ -15,7 +15,7 @@ class AlbumController extends Controller
     
     public function __construct()
     {
-        $this->middleware('auth:api')->except(['index', 'show']);
+        //$this->middleware('auth:api')->except(['index', 'show']);
     }
     /**
      * Display a listing of the resource.
@@ -48,8 +48,8 @@ class AlbumController extends Controller
      
         //return back()->with ('ok', __ ("L'album a bien été enregistré"));
         //return redirect('/upload');
-        return Redirect::route('upload');
         
+    return view('upload');        
     }
 
     /**
@@ -94,4 +94,23 @@ class AlbumController extends Controller
 
         return response()->json(null, 204);
     }
+
+
+  /**
+     * Create a new album.
+     *
+     * @param  array  $data
+     * @return \App\Album
+     
+    protected function create(array $data)
+    {
+        return AlbumController::create([
+            'name' => $data['name'],
+            'description' => $data['description'],
+            
+            'user_id' => $data->user()->id,
+            
+        ]);
+    }*/
+
 }
