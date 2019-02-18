@@ -30,7 +30,7 @@ Route::post('/inscription', function () {
     return 'Votre email est ' . request('email');
 });
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');
  Route::post('store', 'AlbumController@store')->name('store');
 
 Route::post('upload', 'PhotoController@index');

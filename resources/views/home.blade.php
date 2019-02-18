@@ -17,7 +17,7 @@
                       
         <form method="POST"  action="{{ route('store') }}">
            {{ csrf_field() }}
-           <label>Nom</label> <input type="text" name="Nom">
+           <label>Nom</label> <input type="text" name="name">
            <label>Description</label> <input type="text" name="description">
             <!-- <button type="submit">creer</button>-->
              <input type="submit" value="Creer" />
